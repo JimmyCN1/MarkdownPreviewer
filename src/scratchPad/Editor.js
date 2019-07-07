@@ -9,9 +9,9 @@ function Editor(props) {
 
   const headerStyle = {
     width: "100%",
-    padding: "10px",
-    paddingLeft: "30px",
-    backgroundColor: "grey"
+    padding: "0px 10px",
+    paddingLeft: "30px"
+    // backgroundColor: "grey"
   };
 
   const textAreaStyles = {
@@ -21,12 +21,14 @@ function Editor(props) {
     height: "90%",
     autofocus: "autofocus",
     overflow: "auto",
-    margin: "10px"
+    margin: "0px 10px"
   };
 
   return (
     <div style={divStyles}>
-      <header style={headerStyle}>Editor</header>
+      <header style={headerStyle}>
+        <h3>Editor</h3>
+      </header>
       <textarea
         rows="74"
         style={textAreaStyles}

@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 
 import NavBar from "./NavBar";
-import ScratchPad from "./ScratchPad";
+import ScratchPad from "./scratchPad/ScratchPad";
 
 class App extends React.Component {
   constructor(props) {
@@ -14,7 +14,6 @@ class App extends React.Component {
   }
 
   changeOrder = () => {
-    // console.log(`editorfirst: ${this.state.editorFirst}`);
     this.setState({ editorFirst: !this.state.editorFirst });
   };
 
