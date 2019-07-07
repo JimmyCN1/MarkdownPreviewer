@@ -3,9 +3,18 @@ import React from "react";
 import ReactHtmlParser from "react-html-parser";
 
 function Previewer(props) {
-  let divStyles = {
+  let styles = {
     display: "flex",
-    flexDirection: "column"
+    flexDirection: "column",
+    alignItems: "center",
+    padding: "0px 10px"
+  };
+
+  let innerStyle = {
+    width: "95%",
+    maxWidth: "700px"
+    // aligSelf: "center",
+    // justifySelf: "center"
   };
 
   const headerStyle = {
@@ -15,9 +24,9 @@ function Previewer(props) {
   };
 
   return (
-    <div style={divStyles}>
+    <div style={styles}>
       <header style={headerStyle}>Previewer</header>
-      <div> {ReactHtmlParser(props.preview)} </div>
+      <div style={innerStyle}> {ReactHtmlParser(props.preview)} </div>
     </div>
   );
 }
