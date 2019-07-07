@@ -8,9 +8,12 @@ function Editor(props) {
   };
 
   const headerStyle = {
-    width: "100%",
-    padding: "0px 10px",
-    paddingLeft: "30px"
+    display: "flex",
+    justifyContent: "space-between",
+    width: "90%",
+    maxWidth: "700px",
+    padding: "0px 10px"
+    // paddingLeft: "30px"
     // backgroundColor: "grey"
   };
 
@@ -28,12 +31,14 @@ function Editor(props) {
     <div style={divStyles}>
       <header style={headerStyle}>
         <h3>Editor</h3>
+        <div>Options</div>
       </header>
       <textarea
-        rows="74"
+        rows="71"
         style={textAreaStyles}
         value={props.text}
         onChange={props.handleChange}
+        placeholder="Please type your markdown here..."
       />
     </div>
   );

@@ -12,11 +12,13 @@ function Previewer(props) {
 
   let innerStyle = {
     width: "95%",
-    maxWidth: "700px"
+    maxWidth: "700px",
+    backgroundColor: "white"
   };
 
   const headerStyle = {
-    width: "100%",
+    width: "90%",
+    maxWidth: "700px",
     padding: "0px"
     // backgroundColor: "#EDE580"
   };
@@ -24,7 +26,7 @@ function Previewer(props) {
   return (
     <div style={styles}>
       <header style={headerStyle}>
-        <h3>Previewer</h3>
+        <h3 paddingLeft="10px">Previewer</h3>
       </header>
       <div style={innerStyle}> {ReactHtmlParser(props.preview)} </div>
     </div>

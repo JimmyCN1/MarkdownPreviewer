@@ -12,11 +12,11 @@ function NavBar({ changeOrder }) {
 
   return (
     <div style={styles}>
-      <h1>Nav Bar</h1>
+      <h1>Markdown Previewer</h1>
       {/* <NavButton name="orientation" img="fas fa-columns fa-5x" /> */}
       <NavButton
         name="order"
-        img="fas fa-exchange-alt fa-5x"
+        img="fas fa-exchange-alt fa-2x"
         changeOrder={changeOrder}
       />
     </div>
