@@ -1,14 +1,10 @@
 import React from "react";
 
 function Editor(props) {
-  // console.log(JSON.stringify(props));
-
   let divStyles = {
     display: "flex",
     flexDirection: "column",
-    // justifyContent: "center",
     alignItems: "center"
-    // padding: "10px 0px"
   };
 
   const headerStyle = {

@@ -23,8 +23,7 @@ class ScratchPad extends React.Component {
 
   render() {
     const md = new MarkdownIt();
-    const result = md.render(this.state.text);
-    console.log(result);
+    var result = md.render(this.state.text);
 
     let { text } = this.state;
 
@@ -43,41 +42,5 @@ class ScratchPad extends React.Component {
     );
   }
 }
-
-const charSet = [
-  "###### ",
-  "##### ",
-  "#### ",
-  "### ",
-  "## ",
-  "# ",
-  "*",
-  "_",
-  "**",
-  "__",
-  "~~",
-  "  ",
-  "[",
-  "]",
-  "(",
-  ")"
-];
-
-const texts = [
-  "# Welcome to my React Markdown Previewer!",
-  "## This is a sub-heading...",
-  "### And here's some other cool stuff:"
-];
-function transform() {
-  texts.forEach(text => {
-    for (let i = 6, index = 0; i > 0; i--, index++) {
-      if (text.includes(charSet[index])) {
-        console.log(`<h${i}>${text.slice(i + 1)}</h${i}>`);
-      }
-    }
-  });
-}
-
-// transform();
 
 export default ScratchPad;
