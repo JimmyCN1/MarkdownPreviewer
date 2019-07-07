@@ -1,9 +1,26 @@
 import React from "react";
 
 function Previewer(props) {
+  let divStyles = {
+    display: "flex",
+    flexDirection: "column"
+    // justifyContent: "center",
+    // alignItems: "center",
+    // padding: "10px"
+  };
+
+  const headerStyle = {
+    width: "100%",
+    // paddingLeft: "10px",
+    padding: "10px",
+    backgroundColor: "grey"
+  };
+
   return (
-    <div>
-      <h1>
+    <div style={divStyles}>
+      <header style={headerStyle}>Previewer</header>
+      {props.text}
+      {/* <h1>
         Nulla cillum ad velit adipisicing dolor adipisicing cillum sint. Aliqua
         velit ea non aliqua magna nulla id officia commodo exercitation
         deserunt. Cupidatat ea proident tempor pariatur esse ad eu. Aute
@@ -25,7 +42,7 @@ function Previewer(props) {
         velit enim occaecat id. Magna mollit excepteur voluptate sunt enim duis
         cupidatat est in fugiat eiusmod. Eu aliquip excepteur id ad quis
         adipisicing duis est. Culpa
-      </h3>
+      </h3> */}
     </div>
   );
 }

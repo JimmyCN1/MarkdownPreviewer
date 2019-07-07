@@ -14,7 +14,16 @@ class ScratchPad extends React.Component {
     };
   }
 
+  handleChange = e => {
+    this.setState({
+      text: e.target.value
+    });
+  };
+
   render() {
+    let { text } = this.state;
+
+    let editor = <Editor text={text} handleChange={this.handleChange} />;
     return (
       <SplitPane
         split="vertical"
@@ -22,9 +31,9 @@ class ScratchPad extends React.Component {
         maxSize={-200}
         defaultSize="50%"
       >
-        {this.props.editorFirst && <Editor />}
-        <Previewer />
-        {!this.props.editorFirst && <Editor />}
+        {this.props.editorFirst && editor}
+        <Previewer text={text} />
+        {!this.props.editorFirst && editor}
       </SplitPane>
     );
   }

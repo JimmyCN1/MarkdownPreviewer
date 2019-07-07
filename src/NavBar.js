@@ -4,10 +4,9 @@ import NavButton from "./NavButton";
 
 function NavBar({ changeOrder }) {
   let styles = {
+    padding: "0px 10px",
     backgroundColor: "lightgrey"
   };
-
-  // console.log(JSON.stringify(props));
 
   return (
     <div style={styles}>
