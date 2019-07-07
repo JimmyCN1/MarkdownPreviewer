@@ -14,7 +14,7 @@ class App extends React.Component {
   }
 
   changeOrder = () => {
-    console.log(`editorfirst: ${this.state.editorFirst}`);
+    // console.log(`editorfirst: ${this.state.editorFirst}`);
     this.setState({ editorFirst: !this.state.editorFirst });
   };
 

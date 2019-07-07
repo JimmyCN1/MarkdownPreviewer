@@ -19,7 +19,7 @@ function Previewer(props) {
   return (
     <div style={divStyles}>
       <header style={headerStyle}>Previewer</header>
-      {props.text}
+      <p>{props.preview}</p>
       {/* <h1>
         Nulla cillum ad velit adipisicing dolor adipisicing cillum sint. Aliqua
         velit ea non aliqua magna nulla id officia commodo exercitation
