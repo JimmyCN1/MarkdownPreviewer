@@ -25,7 +25,7 @@ function Previewer(props) {
   return (
     <div style={styles}>
       <header style={headerStyle}>
-        <h3 paddingLeft="10px">Previewer</h3>
+        <h3>Previewer</h3>
       </header>
       <div style={innerStyle}> {ReactHtmlParser(props.preview)} </div>
     </div>

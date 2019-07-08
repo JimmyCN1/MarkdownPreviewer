@@ -5,9 +5,28 @@ function EditorButton(props) {
     border: "none"
   };
 
+  let handleClick = e => {
+    console.log(props.name);
+    props.handleButton();
+    // switch (props.name) {
+    //   case "undo":
+    //     break;
+    //   case "redo":
+    //     break;
+    //   case "trash":
+    //     break;
+    // }
+    // return "";
+  };
+
   return (
-    <button type="button" class="btn btn-outline-dark" style={styles}>
-      <i class={props.icon} />
+    <button
+      type="button"
+      className="btn btn-outline-dark"
+      style={styles}
+      onClick={handleClick}
+    >
+      <i className={props.icon} />
     </button>
   );
 }

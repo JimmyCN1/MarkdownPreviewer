@@ -15,7 +15,7 @@ function NavButton(props) {
   return (
     <button
       type="button"
-      class="btn btn-outline-dark"
+      className="btn btn-outline-dark"
       name={props.orientation}
       style={styles}
       onClick={handleClick}

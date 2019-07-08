@@ -11,14 +11,25 @@ class ScratchPad extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: ""
+      text: "",
+      pastTextState: [""],
+      pastTextStateIndex: -1
     };
   }
 
   handleChange = e => {
     this.setState({
-      text: e.target.value
+      text: e.target.value,
+      pastTextState: [...this.state.pastTextState, e.target.value],
+      pastTextStateIndex: (this.state.pastTextStateIndex += 1)
     });
+    console.log(
+      `${this.state.pastTextStateIndex}: ${this.state.pastTextState}`
+    );
+  };
+
+  handleButton = e => {
+    console.log("handle button");
   };
 
   render() {
@@ -27,7 +38,7 @@ class ScratchPad extends React.Component {
 
     let { text } = this.state;
 
-    let editor = <Editor text={text} handleChange={this.handleChange} />;
+    let editor = <Editor text={text} handleButton={this.handleButton} />;
     return (
       <SplitPane
         split="vertical"

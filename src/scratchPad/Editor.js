@@ -31,8 +31,21 @@ function Editor(props) {
     <div style={divStyles}>
       <header style={headerStyle}>
         <h3>Editor</h3>
-        <EditorButton icon="fas fa-undo-alt" />
-        <EditorButton icon="far fa-trash-alt" />
+        <EditorButton
+          name="undo"
+          icon="fas fa-undo-alt"
+          handleButton={props.handleButton}
+        />
+        <EditorButton
+          name="redo"
+          icon="fas fa-redo-alt"
+          handleButton={props.handleButton}
+        />
+        <EditorButton
+          name="trash"
+          icon="far fa-trash-alt"
+          handleButton={props.handleButton}
+        />
       </header>
       <textarea
         rows="40"
