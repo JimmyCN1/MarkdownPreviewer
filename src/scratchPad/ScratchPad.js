@@ -13,49 +13,73 @@ class ScratchPad extends React.Component {
     this.state = {
       text: "",
       pastTextStates: [""],
+      currentIndex: 0,
       pastTextStatesIndex: 2
     };
   }
 
   handleChange = e => {
-    console.log(1);
+    let currentIndex = this.state.pastTextStates.length - 1;
     this.setState({
       text: e.target.value,
-      pastTextStates: [...this.state.pastTextStates, e.target.value],
+      pastTextStates: [
+        ...this.state.pastTextStates.slice(0, currentIndex + 1),
+        e.target.value
+      ],
+      currentIndex: currentIndex,
       pastTextStatesIndex: 2
     });
     console.log(
-      `${this.state.pastTextStatesIndex}: ${this.state.pastTextStates}`
+      `current index: ${this.state.currentIndex} past index: ${
+        this.state.pastTextStatesIndex
+      } states: ${this.state.pastTextStates}`
     );
   };
 
   handleButton = e => {
-    let { text, pastTextStates, pastTextStatesIndex } = this.state;
+    let {
+      text,
+      pastTextStates,
+      currentIndex,
+      pastTextStatesIndex
+    } = this.state;
     console.log("handle button " + e);
 
     switch (e) {
       case "undo":
-        this.setState({
-          text: pastTextStates[pastTextStates.length - pastTextStatesIndex],
-          pastTextStatesIndex:
-            pastTextStates.length - pastTextStatesIndex >= 0 &&
-            (pastTextStatesIndex += 1)
-        });
         console.log(
-          `past index: ${pastTextStatesIndex}, length: ${pastTextStates.length}`
+          `current index: ${currentIndex}, length: ${pastTextStates.length}`
         );
-        console.log("memes");
+        if (currentIndex >= 0) {
+          this.setState({
+            text: pastTextStates[currentIndex],
+            currentIndex: (currentIndex -= 1),
+            pastTextStatesIndex:
+              pastTextStates.length - pastTextStatesIndex >= 0 &&
+              (pastTextStatesIndex += 1)
+          });
+        } else {
+          this.setState({
+            text: text
+          });
+        }
         break;
       case "redo":
-        this.setState({
-          text: pastTextStates[pastTextStates.length - pastTextStatesIndex + 1],
-          pastTextStatesIndex:
-            pastTextStatesIndex < pastTextStates.length &&
-            (pastTextStatesIndex -= 1)
-        });
         console.log(
-          `past index: ${pastTextStatesIndex}, length: ${pastTextStates.length}`
+          `current index: ${currentIndex}, length: ${pastTextStates.length}`
         );
+        if (currentIndex < pastTextStates.length - 2) {
+          this.setState({
+            text:
+              pastTextStates[pastTextStates.length - pastTextStatesIndex + 2],
+            currentIndex: (currentIndex += 1),
+            pastTextStatesIndex: (pastTextStatesIndex -= 1)
+          });
+        } else {
+          this.setState({
+            text: text
+          });
+        }
         break;
       case "trash":
         this.setState({
