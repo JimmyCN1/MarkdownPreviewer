@@ -6,17 +6,8 @@ function EditorButton(props) {
   };
 
   let handleClick = e => {
-    console.log(props.name);
-    props.handleButton();
-    // switch (props.name) {
-    //   case "undo":
-    //     break;
-    //   case "redo":
-    //     break;
-    //   case "trash":
-    //     break;
-    // }
-    // return "";
+    // console.log(props.name);
+    props.handleButton(props.name);
   };
 
   return (
