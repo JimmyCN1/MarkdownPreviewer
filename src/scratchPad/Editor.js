@@ -1,5 +1,7 @@
 import React from "react";
 
+import EditorButton from "./EditorButton";
+
 function Editor(props) {
   let divStyles = {
     display: "flex",
@@ -13,8 +15,6 @@ function Editor(props) {
     width: "90%",
     maxWidth: "700px",
     padding: "0px 10px"
-    // paddingLeft: "30px"
-    // backgroundColor: "grey"
   };
 
   const textAreaStyles = {
@@ -31,10 +31,11 @@ function Editor(props) {
     <div style={divStyles}>
       <header style={headerStyle}>
         <h3>Editor</h3>
-        <div>Options</div>
+        <EditorButton icon="fas fa-undo-alt" />
+        <EditorButton icon="far fa-trash-alt" />
       </header>
       <textarea
-        rows="71"
+        rows="40"
         style={textAreaStyles}
         value={props.text}
         onChange={props.handleChange}

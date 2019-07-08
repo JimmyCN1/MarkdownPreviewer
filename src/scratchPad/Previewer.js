@@ -20,7 +20,6 @@ function Previewer(props) {
     width: "90%",
     maxWidth: "700px",
     padding: "0px"
-    // backgroundColor: "#EDE580"
   };
 
   return (
