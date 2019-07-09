@@ -36,16 +36,10 @@ class ScratchPad extends React.Component {
         undoing: false
       });
     }
-    console.log(
-      `current index: ${this.state.currentIndex} states: ${
-        this.state.pastTextStates
-      }`
-    );
   };
 
   handleButton = e => {
-    let { pastTextStates, currentIndex, undoing } = this.state;
-    console.log("handle button " + e);
+    let { pastTextStates, currentIndex } = this.state;
 
     switch (e) {
       case "undo":
@@ -56,9 +50,6 @@ class ScratchPad extends React.Component {
             undoing: true
           });
         }
-        console.log(
-          `current index: ${currentIndex} states: ${pastTextStates} undiong: ${undoing}`
-        );
         break;
       case "redo":
         if (currentIndex >= 0 && currentIndex < pastTextStates.length - 1) {
@@ -68,10 +59,6 @@ class ScratchPad extends React.Component {
             undoing: true
           });
         }
-        console.log(
-          `current index: ${currentIndex}
-           states: ${pastTextStates}`
-        );
         break;
       case "trash":
         this.setState({
@@ -79,10 +66,8 @@ class ScratchPad extends React.Component {
           pastTextStates: [...pastTextStates, ""],
           currentIndex: (currentIndex += 1)
         });
-        console.log(
-          `current index: ${currentIndex}
-           states: ${pastTextStates}`
-        );
+        break;
+      default:
         break;
     }
     document.querySelector("textarea").focus();

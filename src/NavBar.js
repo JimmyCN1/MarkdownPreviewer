@@ -12,8 +12,14 @@ function NavBar({ changeOrder }) {
 
   return (
     <div style={styles}>
-      <h1>Markdown Previewer</h1>
-      {/* <NavButton name="orientation" img="fas fa-columns fa-5x" /> */}
+      <h1>
+        <a
+          href="./index.html"
+          style={{ textDecoration: "none", color: "black" }}
+        >
+          Markdown Previewer
+        </a>
+      </h1>
       <NavButton
         name="order"
         img="fas fa-exchange-alt fa-2x"
