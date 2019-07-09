@@ -55,19 +55,6 @@ class ScratchPad extends React.Component {
             currentIndex: (currentIndex -= 1),
             undoing: true
           });
-          // if (undoing) {
-          //   this.setState({
-          //     text: pastTextStates[currentIndex - 1],
-          //     currentIndex: (currentIndex -= 1)
-          //   });
-          //   this.setState({ undoing: true });
-          // } else if (!undoing) {
-          //   this.setState({
-          //     text: pastTextStates[currentIndex - 1],
-          //     currentIndex: (currentIndex -= 1),
-          //     undoing: true
-          //   });
-          // }
         }
         console.log(
           `current index: ${currentIndex} states: ${pastTextStates} undiong: ${undoing}`
@@ -80,19 +67,6 @@ class ScratchPad extends React.Component {
             currentIndex: (currentIndex += 1),
             undoing: true
           });
-          // if (undoing) {
-          //   this.setState({
-          //     text: pastTextStates[currentIndex + 1],
-          //     currentIndex: (currentIndex += 1)
-          //   });
-          //   this.setState({ undoing: true });
-          // } else if (!undoing) {
-          //   this.setState({
-          //     text: pastTextStates[currentIndex + 1],
-          //     currentIndex: (currentIndex += 1),
-          //     undoing: true
-          //   });
-          // }
         }
         console.log(
           `current index: ${currentIndex}
@@ -111,6 +85,7 @@ class ScratchPad extends React.Component {
         );
         break;
     }
+    document.querySelector("textarea").focus();
     return "";
   };
 

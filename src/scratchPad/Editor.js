@@ -53,6 +53,7 @@ function Editor(props) {
         value={props.text}
         onChange={props.handleChange}
         placeholder="Please type your markdown here..."
+        autoFocus
       />
     </div>
   );
