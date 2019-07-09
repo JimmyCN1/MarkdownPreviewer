@@ -6,7 +6,6 @@ function EditorButton(props) {
   };
 
   let handleClick = e => {
-    // console.log(props.name);
     props.handleButton(props.name);
   };
 

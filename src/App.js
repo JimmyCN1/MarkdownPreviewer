@@ -33,5 +33,4 @@ class App extends React.Component {
   }
 }
 
-// window.ReactSplit;
 export default App;

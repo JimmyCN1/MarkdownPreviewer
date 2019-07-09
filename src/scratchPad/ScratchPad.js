@@ -14,7 +14,6 @@ class ScratchPad extends React.Component {
       text: "",
       pastTextStates: [""],
       currentIndex: 0,
-      pastTextStatesIndex: 2,
       undoing: false
     };
   }
