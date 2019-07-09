@@ -44,46 +44,55 @@ class ScratchPad extends React.Component {
   };
 
   handleButton = e => {
-    let { text, pastTextStates, currentIndex, undoing } = this.state;
+    let { pastTextStates, currentIndex, undoing } = this.state;
     console.log("handle button " + e);
 
     switch (e) {
       case "undo":
-        if (text.length > 0) {
-          if (undoing) {
-            this.setState({
-              text: pastTextStates[currentIndex - 1],
-              currentIndex: (currentIndex -= 1)
-            });
-            this.setState({ undoing: true });
-          } else if (!undoing) {
-            this.setState({
-              text: pastTextStates[currentIndex - 1],
-              currentIndex: (currentIndex -= 1),
-              undoing: true
-            });
-          }
+        if (currentIndex > 0) {
+          this.setState({
+            text: pastTextStates[currentIndex - 1],
+            currentIndex: (currentIndex -= 1),
+            undoing: true
+          });
+          // if (undoing) {
+          //   this.setState({
+          //     text: pastTextStates[currentIndex - 1],
+          //     currentIndex: (currentIndex -= 1)
+          //   });
+          //   this.setState({ undoing: true });
+          // } else if (!undoing) {
+          //   this.setState({
+          //     text: pastTextStates[currentIndex - 1],
+          //     currentIndex: (currentIndex -= 1),
+          //     undoing: true
+          //   });
+          // }
         }
         console.log(
           `current index: ${currentIndex} states: ${pastTextStates} undiong: ${undoing}`
         );
         break;
       case "redo":
-        if (text.length > 0) {
-          // ^ stuck in "trash whole during undo"
-          if (undoing) {
-            this.setState({
-              text: pastTextStates[currentIndex + 1],
-              currentIndex: (currentIndex += 1)
-            });
-            this.setState({ undoing: true });
-          } else if (!undoing) {
-            this.setState({
-              text: pastTextStates[currentIndex + 1],
-              currentIndex: (currentIndex += 1),
-              undoing: true
-            });
-          }
+        if (currentIndex >= 0 && currentIndex < pastTextStates.length - 1) {
+          this.setState({
+            text: pastTextStates[currentIndex + 1],
+            currentIndex: (currentIndex += 1),
+            undoing: true
+          });
+          // if (undoing) {
+          //   this.setState({
+          //     text: pastTextStates[currentIndex + 1],
+          //     currentIndex: (currentIndex += 1)
+          //   });
+          //   this.setState({ undoing: true });
+          // } else if (!undoing) {
+          //   this.setState({
+          //     text: pastTextStates[currentIndex + 1],
+          //     currentIndex: (currentIndex += 1),
+          //     undoing: true
+          //   });
+          // }
         }
         console.log(
           `current index: ${currentIndex}
