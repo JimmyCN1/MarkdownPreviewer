@@ -20,6 +20,7 @@ function NavBar({ changeOrder }) {
           Markdown Previewer
         </a>
       </h1>
+
       <NavButton
         name="order"
         img="fas fa-exchange-alt fa-2x"
