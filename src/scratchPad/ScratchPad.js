@@ -94,7 +94,7 @@ class ScratchPad extends React.Component {
         defaultSize="50%"
       >
         {this.props.editorFirst && editor}
-        <Previewer preview={result} />
+        <Previewer preview={result} editorFirst={this.props.editorFirst} />
         {!this.props.editorFirst && editor}
       </SplitPane>
     );

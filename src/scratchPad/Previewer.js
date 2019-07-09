@@ -1,20 +1,15 @@
 import React from "react";
-import { Animated } from "react-animated-css";
 
 import ReactHtmlParser from "react-html-parser";
 
-function Previewer(props) {
+import DividerSign from "./DividerSign";
+
+function Previewer({ preview, editorFirst }) {
   let styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     padding: "0px 10px"
-  };
-
-  let innerStyle = {
-    width: "95%",
-    maxWidth: "700px",
-    backgroundColor: "white"
   };
 
   const headerStyle = {
@@ -23,8 +18,10 @@ function Previewer(props) {
     padding: "0px"
   };
 
-  const animatedStyle = {
-    alignSelf: "flex-start"
+  let innerStyle = {
+    width: "95%",
+    maxWidth: "700px",
+    backgroundColor: "white"
   };
 
   return (
@@ -33,9 +30,9 @@ function Previewer(props) {
         <h3>Previewer</h3>
       </header>
 
-      <div style={innerStyle}> {ReactHtmlParser(props.preview)} </div>
-
-      <div style={animatedStyle}>
+      <div style={innerStyle}> {ReactHtmlParser(preview)} </div>
+      <DividerSign editorFirst={editorFirst} />
+      {/* <div style={animatedStyle}>
         <Animated animationIn="pulse">
           <div
             className="btn btn-outline-dark"
@@ -55,7 +52,7 @@ function Previewer(props) {
             </h5>
           </div>
         </Animated>
-      </div>
+      </div> */}
     </div>
   );
 }
